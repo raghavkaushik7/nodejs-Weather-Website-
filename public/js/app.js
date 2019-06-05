@@ -3,10 +3,12 @@ const search = document.querySelector('input')
 const messageOne= document.querySelector('#message-1')
 const messageTwo= document.querySelector('#message-2')
 
-messageOne.textContent = 'Loading...'
+
 
 // messageOne.textContent = 'From JavaScript'
 weatherForm.addEventListener('submit', (e) => {
+   messageOne.textContent = 'Loading...'
+   messageTwo.textContent=''
     e.preventDefault()
     const location =search.value
     fetch('/weather?address='+encodeURIComponent(location)).then((response={}) => {   
